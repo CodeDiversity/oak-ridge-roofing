@@ -1,0 +1,164 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import roofRepair from '../images/roof-repair.png';
+---
+
+<Layout title="Roof Repair" description="Professional roof repair services in Oak Ridge, TN. Fix leaks, replace missing shingles, and address storm damage quickly and affordably.">
+
+  <!-- Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <h1>Roof Repair</h1>
+      <p class="hero-subtitle">Don't let small problems become big expenses. Our expert team diagnoses and fixes roof issues fast, often the same day you call.</p>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <section class="section-pad">
+    <div class="container">
+      <div class="content-grid">
+        <div class="main-content">
+          <div class="content-image">
+            <Image src={roofRepair} alt="Roofing professional working on repairs" />
+          </div>
+          <h2>Fast, Reliable Roof Repairs</h2>
+          <p>A small leak today can become a major problem tomorrow. Water damage, mold growth, and structural deterioration often start as minor issues that were easy to ignore. We make it easy to address them.</p>
+
+          <h3>Common Repair Issues We Fix:</h3>
+          <ul class="feature-list">
+            <li>Roof leaks and water intrusion</li>
+            <li>Missing, cracked, or curled shingles</li>
+            <li>Damaged or deteriorating flashing</li>
+            <li>Ice dam removal and prevention</li>
+            <li>Ventilation problems and attic moisture</li>
+            <li>Gutter and downspout repairs</li>
+            <li>Storm damage repairs</li>
+            <li>Roof plane collapses or sagging</li>
+          </ul>
+
+          <h3>Our Repair Process</h3>
+          <p>When you contact us for a repair, we respond quickly. Most inspections are scheduled within 24-48 hours, and many repairs can be completed the same day. We provide a detailed assessment and honest pricing before any work begins — no surprises, no pressure.</p>
+
+          <h3>Repair vs. Replacement</h3>
+          <p>Not every roofing problem requires a full replacement. Our inspections are thorough and unbiased. If a repair will extend the life of your roof cost-effectively, we'll recommend that. If replacement makes more long-term sense, we'll explain why.</p>
+        </div>
+
+        <aside class="sidebar">
+          <div class="cta-card">
+            <h3>Need Fast Repairs?</h3>
+            <p>For urgent issues like active leaks, we offer emergency service. Call now for same-day response.</p>
+            <a href="tel:+15551234567" class="btn btn-emergency btn-full">
+              <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+              </svg>
+              Call (555) 123-4567
+            </a>
+          </div>
+
+          <div class="info-card">
+            <h4>Signs You Need Repair</h4>
+            <ul class="signs-list">
+              <li>Water stains on ceilings or walls</li>
+              <li>Missing or damaged shingles after storms</li>
+              <li>Granules in gutters from shingle wear</li>
+              <li>Higher than normal energy bills</li>
+              <li>Daylight visible through roof boards</li>
+            </ul>
+          </div>
+
+          <div class="info-card">
+            <h4>Repair Pricing</h4>
+            <p>Most repairs range from $150 to $1,500 depending on scope. We provide free inspections and written estimates before any work.</p>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Services -->
+  <section class="section-pad-alt related">
+    <div class="container">
+      <h2>Related Services</h2>
+      <div class="related-grid">
+        <a href="/services" class="related-card">
+          <h3>Roofing Services</h3>
+          <p>Complete roof installation and replacement when repairs aren't enough.</p>
+          <span>Learn more →</span>
+        </a>
+        <a href="/storm-damage" class="related-card">
+          <h3>Storm Damage</h3>
+          <p>Expert assessment and repair of hail and wind damage.</p>
+          <span>Learn more →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .page-hero {
+    background: linear-gradient(135deg, var(--color-primary) 0%, #4A3E2B 100%);
+    color: var(--color-surface);
+    padding: var(--space-16) 0;
+    text-align: center;
+  }
+
+  .page-hero h1 { color: var(--color-surface); margin-bottom: var(--space-4); }
+  .hero-subtitle { font-size: var(--font-size-body-lg); color: rgba(255, 255, 255, 0.9); max-width: 600px; margin: 0 auto; }
+
+  .section-pad { padding: var(--space-16) 0; }
+  .section-pad-alt { padding: var(--space-16) 0; background: var(--color-surface); }
+
+  .content-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-8); }
+  @media (min-width: 64rem) { .content-grid { grid-template-columns: 1fr 320px; } }
+
+  .main-content h2 { margin-bottom: var(--space-4); }
+  .main-content h3 { margin-top: var(--space-8); margin-bottom: var(--space-4); }
+
+  .content-image {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    margin-bottom: var(--space-6);
+    aspect-ratio: 16/9;
+  }
+
+  .content-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .main-content p { color: var(--color-text-muted); line-height: 1.7; }
+
+  .feature-list { list-style: none; margin: var(--space-6) 0; }
+  .feature-list li { position: relative; padding-left: var(--space-6); margin-bottom: var(--space-3); color: var(--color-text-muted); }
+  .feature-list li::before { content: '✓'; position: absolute; left: 0; color: var(--color-secondary); font-weight: 700; }
+
+  .sidebar { display: flex; flex-direction: column; gap: var(--space-6); }
+
+  .cta-card, .info-card { background: var(--color-surface); border: 1px solid rgba(93, 78, 55, 0.1); border-radius: var(--radius-lg); padding: var(--space-6); box-shadow: var(--shadow-md); }
+  .cta-card h3, .info-card h4 { margin-bottom: var(--space-3); }
+  .cta-card p { color: var(--color-text-muted); font-size: 0.875rem; margin-bottom: var(--space-4); }
+
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: var(--space-2); font-family: var(--font-body); font-size: 1rem; font-weight: 600; padding: var(--space-4) var(--space-6); border-radius: var(--radius-md); text-decoration: none; min-height: 52px; transition: all 150ms ease; cursor: pointer; border: none; }
+  .btn-full { width: 100%; }
+
+  .btn-emergency { background: #C45B5B; color: white; }
+  .btn-emergency:hover { background: #A33D3D; }
+
+  .info-card li { padding: var(--space-2) 0; font-size: 0.875rem; color: var(--color-text-muted); border-bottom: 1px solid rgba(93, 78, 55, 0.1); }
+  .info-card li:last-child { border-bottom: none; }
+  .info-card p { font-size: 0.875rem; color: var(--color-text-muted); margin: 0; }
+
+  .related h2 { text-align: center; margin-bottom: var(--space-8); }
+  .related-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-6); }
+  @media (min-width: 48rem) { .related-grid { grid-template-columns: repeat(2, 1fr); } }
+
+  .related-card { background: var(--color-background); padding: var(--space-6); border-radius: var(--radius-lg); border: 1px solid rgba(93, 78, 55, 0.1); text-decoration: none; color: inherit; transition: all 200ms ease; }
+  .related-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); border-color: var(--color-accent); }
+  .related-card h3 { margin-bottom: var(--space-2); }
+  .related-card p { color: var(--color-text-muted); font-size: 0.875rem; margin-bottom: var(--space-3); }
+  .related-card span { color: var(--color-primary); font-weight: 600; font-size: 0.875rem; }
+</style>

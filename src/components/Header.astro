@@ -1,0 +1,153 @@
+---
+---
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo" aria-label="Oak Ridge Roofing Co. — Home">
+      <span class="logo-primary">Oak Ridge</span>
+      <span class="logo-secondary">Roofing Co.</span>
+    </a>
+
+    <nav class="nav-desktop" aria-label="Main navigation">
+      <a href="/">Home</a>
+      <a href="/services">Services</a>
+      <a href="/repair">Roof Repair</a>
+      <a href="/storm-damage">Storm Damage</a>
+      <a href="/about">About</a>
+      <a href="/contact">Contact</a>
+    </nav>
+
+    <a href="tel:+15551234567" class="btn-call">
+      <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+      </svg>
+      <span>Call Now</span>
+    </a>
+
+    <button class="nav-mobile-toggle" aria-label="Open menu" aria-expanded="false" type="button">
+      <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+      </svg>
+    </button>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--color-surface);
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow 200ms ease;
+  }
+
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--space-4);
+    gap: var(--space-4);
+  }
+
+  .logo {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: var(--color-primary);
+  }
+
+  .logo-primary {
+    font-family: var(--font-headline);
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1.1;
+  }
+
+  .logo-secondary {
+    font-family: var(--font-headline);
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: var(--color-text-muted);
+  }
+
+  /* Desktop nav — hidden on mobile */
+  .nav-desktop {
+    display: none;
+    gap: var(--space-8);
+  }
+
+  @media (min-width: 48rem) {
+    .nav-desktop {
+      display: flex;
+    }
+  }
+
+  .nav-desktop a {
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--color-text);
+    text-decoration: none;
+    transition: color 150ms ease;
+  }
+
+  .nav-desktop a:hover,
+  .nav-desktop a:focus-visible {
+    color: var(--color-accent);
+  }
+
+  /* CTA Button */
+  .btn-call {
+    display: none;
+    align-items: center;
+    gap: var(--space-2);
+    background: var(--color-accent);
+    color: var(--color-primary);
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    font-weight: 600;
+    padding: var(--space-2) var(--space-4);
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    min-height: 44px;
+    transition: filter 150ms ease;
+  }
+
+  .btn-call:hover,
+  .btn-call:focus-visible {
+    filter: brightness(0.95);
+  }
+
+  @media (min-width: 48rem) {
+    .btn-call {
+      display: flex;
+    }
+  }
+
+  /* Mobile toggle — visible on mobile */
+  .nav-mobile-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: var(--color-text);
+    border-radius: var(--radius-sm);
+  }
+
+  .nav-mobile-toggle:hover {
+    background: rgba(93, 78, 55, 0.06);
+  }
+
+  @media (min-width: 48rem) {
+    .nav-mobile-toggle {
+      display: none;
+    }
+  }
+</style>

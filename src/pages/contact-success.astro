@@ -1,0 +1,114 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Thank You" description="Thank you for contacting Oak Ridge Roofing Co.">
+
+  <section class="page-hero">
+    <div class="container">
+      <h1>Thank You!</h1>
+      <p class="hero-subtitle">Your message has been received.</p>
+    </div>
+  </section>
+
+  <section class="section-pad">
+    <div class="container success-content">
+      <div class="success-icon">
+        <svg width="64" height="64" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+        </svg>
+      </div>
+      
+      <h2>Message Sent Successfully</h2>
+      <p>We've received your inquiry and would normally contact you within 24 hours. However, since this is a demonstration website, no actual message was sent or received.</p>
+      
+      <div class="demo-notice">
+        <strong>Demo Notice:</strong> This is a fictional website created by <a href="https://pageandpixel.com">Page and Pixel</a> for portfolio purposes. The contact form does not send emails or store data. Oak Ridge Roofing Co. is not a real business.
+      </div>
+
+      <a href="/" class="btn btn-primary">Return Home</a>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .page-hero {
+    background: linear-gradient(135deg, var(--color-primary) 0%, #4A3E2B 100%);
+    color: var(--color-surface);
+    padding: var(--space-16) 0;
+    text-align: center;
+  }
+
+  .page-hero h1 { color: var(--color-surface); margin-bottom: var(--space-4); }
+  .hero-subtitle { font-size: var(--font-size-body-lg); color: rgba(255, 255, 255, 0.9); }
+
+  .section-pad { padding: var(--space-16) 0; }
+
+  .success-content {
+    max-width: 600px;
+    text-align: center;
+  }
+
+  .success-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+    background: rgba(61, 90, 69, 0.1);
+    border-radius: 50%;
+    color: var(--color-secondary);
+    margin-bottom: var(--space-6);
+  }
+
+  .success-content h2 {
+    margin-bottom: var(--space-4);
+  }
+
+  .success-content > p {
+    color: var(--color-text-muted);
+    line-height: 1.7;
+    margin-bottom: var(--space-6);
+  }
+
+  .demo-notice {
+    background: #FFF3CD;
+    border: 1px solid #FFC107;
+    border-radius: var(--radius-md);
+    padding: var(--space-4);
+    margin-bottom: var(--space-8);
+    font-size: 0.875rem;
+    text-align: left;
+  }
+
+  .demo-notice a {
+    color: var(--color-primary);
+    font-weight: 600;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 600;
+    padding: var(--space-4) var(--space-6);
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    min-height: 52px;
+    transition: all 150ms ease;
+  }
+
+  .btn-primary {
+    background: var(--color-accent);
+    color: var(--color-primary);
+  }
+
+  .btn-primary:hover {
+    filter: brightness(1.1);
+    transform: translateY(-1px);
+  }
+</style>

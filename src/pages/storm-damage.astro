@@ -1,0 +1,164 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import stormDamage from '../images/storm-damage.png';
+---
+
+<Layout title="Storm Damage" description="Storm damage roof repair in Oak Ridge, TN. Hail and wind damage assessment with complete insurance claim assistance.">
+
+  <!-- Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <h1>Storm Damage</h1>
+      <p class="hero-subtitle">When severe weather strikes, we respond fast. Complete storm damage assessment, emergency repairs, and full insurance claim support.</p>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <section class="section-pad">
+    <div class="container">
+      <div class="content-grid">
+        <div class="main-content">
+          <div class="content-image">
+            <Image src={stormDamage} alt="Home with storm damage to roof" />
+          </div>
+          <h2>Storm Damage Assessment & Restoration</h2>
+          <p>East Tennessee storms can cause significant damage to your roof — often when you least expect it. After a major storm, the most important thing is to act quickly. Delaying repairs can lead to secondary damage that may not be covered by your insurance.</p>
+
+          <h3>Types of Storm Damage We Repair:</h3>
+          <ul class="feature-list">
+            <li>Hail damage — dents, cracks, and granule loss on shingles</li>
+            <li>Wind damage — lifted, torn, or missing shingles</li>
+            <li>Fallen tree and branch damage</li>
+            <li>Ice dam damage and removal</li>
+            <li>Flash flooding damage</li>
+            <li>Lightning strike damage</li>
+          </ul>
+
+          <h3>Insurance Claim Assistance</h3>
+          <p>Navigating insurance claims after storm damage can be overwhelming. That's why we offer comprehensive support throughout the process. We'll meet with your insurance adjuster, provide detailed documentation, and ensure nothing is overlooked. Our goal is to make the process as stress-free as possible.</p>
+
+          <h3>Emergency Services</h3>
+          <p>When damage is severe, we provide emergency tarping and temporary repairs to prevent further damage to your home. We'll stabilize the situation and then complete permanent repairs as quickly as possible.</p>
+        </div>
+
+        <aside class="sidebar">
+          <div class="cta-card">
+            <h3>Storm Damage?</h3>
+            <p>Call immediately after a major storm. We offer free inspections and will work directly with your insurance company.</p>
+            <a href="tel:+15551234567" class="btn btn-emergency btn-full">
+              <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+              </svg>
+              Emergency Line
+            </a>
+          </div>
+
+          <div class="info-card">
+            <h4>After a Storm Checklist</h4>
+            <ol class="checklist">
+              <li><strong>Document damage</strong> — Take photos from ground level</li>
+              <li><strong>Call your insurer</strong> — Report damage promptly</li>
+              <li><strong>Schedule inspection</strong> — We'll assess and document</li>
+              <li><strong>Meet adjuster</strong> — We can be present</li>
+              <li><strong>Approve repairs</strong> — We handle everything else</li>
+            </ol>
+          </div>
+
+          <div class="info-card">
+            <h4>Our Guarantee</h4>
+            <p>We work with all major insurance carriers and will never ask you to pay out of pocket beyond your deductible. If we can't get your claim approved, the inspection is free.</p>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Services -->
+  <section class="section-pad-alt related">
+    <div class="container">
+      <h2>Related Services</h2>
+      <div class="related-grid">
+        <a href="/repair" class="related-card">
+          <h3>Roof Repair</h3>
+          <p>Fix storm damage quickly before it leads to bigger problems.</p>
+          <span>Learn more →</span>
+        </a>
+        <a href="/services" class="related-card">
+          <h3>Roofing Services</h3>
+          <p>Complete roof replacement when damage requires more than repairs.</p>
+          <span>Learn more →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .page-hero {
+    background: linear-gradient(135deg, #3D5A45 0%, #2D4433 100%);
+    color: var(--color-surface);
+    padding: var(--space-16) 0;
+    text-align: center;
+  }
+
+  .page-hero h1 { color: var(--color-surface); margin-bottom: var(--space-4); }
+  .hero-subtitle { font-size: var(--font-size-body-lg); color: rgba(255, 255, 255, 0.9); max-width: 600px; margin: 0 auto; }
+
+  .section-pad { padding: var(--space-16) 0; }
+  .section-pad-alt { padding: var(--space-16) 0; background: var(--color-surface); }
+
+  .content-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-8); }
+  @media (min-width: 64rem) { .content-grid { grid-template-columns: 1fr 320px; } }
+
+  .main-content h2 { margin-bottom: var(--space-4); }
+  .main-content h3 { margin-top: var(--space-8); margin-bottom: var(--space-4); }
+
+  .content-image {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    margin-bottom: var(--space-6);
+    aspect-ratio: 16/9;
+  }
+
+  .content-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .main-content p { color: var(--color-text-muted); line-height: 1.7; }
+
+  .feature-list { list-style: none; margin: var(--space-6) 0; }
+  .feature-list li { position: relative; padding-left: var(--space-6); margin-bottom: var(--space-3); color: var(--color-text-muted); }
+  .feature-list li::before { content: '✓'; position: absolute; left: 0; color: var(--color-secondary); font-weight: 700; }
+
+  .sidebar { display: flex; flex-direction: column; gap: var(--space-6); }
+
+  .cta-card, .info-card { background: var(--color-surface); border: 1px solid rgba(93, 78, 55, 0.1); border-radius: var(--radius-lg); padding: var(--space-6); box-shadow: var(--shadow-md); }
+  .cta-card h3, .info-card h4 { margin-bottom: var(--space-3); }
+  .cta-card p { color: var(--color-text-muted); font-size: 0.875rem; margin-bottom: var(--space-4); }
+
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: var(--space-2); font-family: var(--font-body); font-size: 1rem; font-weight: 600; padding: var(--space-4) var(--space-6); border-radius: var(--radius-md); text-decoration: none; min-height: 52px; transition: all 150ms ease; cursor: pointer; border: none; }
+  .btn-full { width: 100%; }
+
+  .btn-emergency { background: #C45B5B; color: white; }
+  .btn-emergency:hover { background: #A33D3D; }
+
+  .checklist { list-style: none; counter-reset: steps; }
+  .checklist li { position: relative; padding-left: var(--space-8); margin-bottom: var(--space-3); font-size: 0.875rem; color: var(--color-text-muted); counter-increment: steps; }
+  .checklist li::before { content: counter(steps); position: absolute; left: 0; top: 0; width: 24px; height: 24px; background: var(--color-secondary); color: white; border-radius: 50%; font-size: 0.75rem; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+
+  .info-card p { font-size: 0.875rem; color: var(--color-text-muted); margin: 0; }
+
+  .related h2 { text-align: center; margin-bottom: var(--space-8); }
+  .related-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-6); }
+  @media (min-width: 48rem) { .related-grid { grid-template-columns: repeat(2, 1fr); } }
+
+  .related-card { background: var(--color-background); padding: var(--space-6); border-radius: var(--radius-lg); border: 1px solid rgba(93, 78, 55, 0.1); text-decoration: none; color: inherit; transition: all 200ms ease; }
+  .related-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); border-color: var(--color-accent); }
+  .related-card h3 { margin-bottom: var(--space-2); }
+  .related-card p { color: var(--color-text-muted); font-size: 0.875rem; margin-bottom: var(--space-3); }
+  .related-card span { color: var(--color-primary); font-weight: 600; font-size: 0.875rem; }
+</style>

@@ -1,0 +1,275 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import newHouseRoof from '../images/new-house-roof.png';
+---
+
+<Layout title="Roofing Services" description="Professional roofing services in Oak Ridge, TN. Complete roof installation, replacement, and maintenance for residential and commercial properties.">
+
+  <!-- Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <h1>Roofing Services</h1>
+      <p class="hero-subtitle">Complete roofing solutions backed by decades of expertise. From new installations to full replacements, we deliver quality that lasts.</p>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <section class="section-pad">
+    <div class="container">
+      <div class="content-grid">
+        <div class="main-content">
+          <div class="content-image">
+            <Image src={newHouseRoof} alt="Newly installed roof on residential home" />
+          </div>
+          <h2>Expert Roof Installation & Replacement</h2>
+          <p>Your roof is your home's first line of defense against the elements. When it's time for a new roof, you need a team that combines quality craftsmanship with honest, transparent service.</p>
+
+          <h3>Our Roofing Services Include:</h3>
+          <ul class="feature-list">
+            <li>Complete roof installation for new construction</li>
+            <li>Full roof replacement for aging or damaged roofs</li>
+            <li>Asphalt shingle roofs (architectural and dimensional)</li>
+            <li>Metal roofing systems</li>
+            <li>Flat and low-slope roofing</li>
+            <li>Roof ventilation solutions</li>
+            <li>Skylight installation</li>
+            <li>Roof maintenance programs</li>
+          </ul>
+
+          <h3>Why Choose Oak Ridge Roofing?</h3>
+          <p>With over 20 years of experience in the greater Knoxville area, we understand the unique challenges that East Tennessee weather poses to your roof. From summer heat to winter ice, our installations are designed to withstand it all.</p>
+
+          <p>We use only premium materials from trusted manufacturers, and every installation is backed by our 10-year workmanship warranty. Our team is fully licensed and insured, giving you peace of mind from start to finish.</p>
+        </div>
+
+        <aside class="sidebar">
+          <div class="cta-card">
+            <h3>Get a Free Estimate</h3>
+            <p>Schedule your free inspection today and get a detailed written quote.</p>
+            <a href="/contact" class="btn btn-primary btn-full">Request Free Inspection</a>
+            <p class="cta-phone">or call <a href="tel:+15551234567">(555) 123-4567</a></p>
+          </div>
+
+          <div class="info-card">
+            <h4>Roof Lifespans</h4>
+            <ul>
+              <li><strong>Asphalt Shingles:</strong> 20-30 years</li>
+              <li><strong>Metal Roofing:</strong> 40-70 years</li>
+              <li><strong>Tile Roofing:</strong> 50+ years</li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Services -->
+  <section class="section-pad-alt related">
+    <div class="container">
+      <h2>Related Services</h2>
+      <div class="related-grid">
+        <a href="/repair" class="related-card">
+          <h3>Roof Repair</h3>
+          <p>Fix leaks, replace missing shingles, and address damage before it worsens.</p>
+          <span>Learn more →</span>
+        </a>
+        <a href="/storm-damage" class="related-card">
+          <h3>Storm Damage</h3>
+          <p>Hail and wind damage assessment with insurance claim assistance.</p>
+          <span>Learn more →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .page-hero {
+    background: linear-gradient(135deg, var(--color-primary) 0%, #4A3E2B 100%);
+    color: var(--color-surface);
+    padding: var(--space-16) 0;
+    text-align: center;
+  }
+
+  .page-hero h1 {
+    color: var(--color-surface);
+    margin-bottom: var(--space-4);
+  }
+
+  .hero-subtitle {
+    font-size: var(--font-size-body-lg);
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .section-pad { padding: var(--space-16) 0; }
+  .section-pad-alt { padding: var(--space-16) 0; background: var(--color-surface); }
+
+  .content-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
+
+  @media (min-width: 64rem) {
+    .content-grid {
+      grid-template-columns: 1fr 320px;
+    }
+  }
+
+  .main-content h2 { margin-bottom: var(--space-4); }
+  .main-content h3 { margin-top: var(--space-8); margin-bottom: var(--space-4); }
+
+  .content-image {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    margin-bottom: var(--space-6);
+    aspect-ratio: 16/9;
+  }
+
+  .content-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .main-content p {
+    color: var(--color-text-muted);
+    line-height: 1.7;
+  }
+
+  .feature-list {
+    list-style: none;
+    margin: var(--space-6) 0;
+  }
+
+  .feature-list li {
+    position: relative;
+    padding-left: var(--space-6);
+    margin-bottom: var(--space-3);
+    color: var(--color-text-muted);
+  }
+
+  .feature-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--color-secondary);
+    font-weight: 700;
+  }
+
+  /* Sidebar */
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+  }
+
+  .cta-card, .info-card {
+    background: var(--color-surface);
+    border: 1px solid rgba(93, 78, 55, 0.1);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+    box-shadow: var(--shadow-md);
+  }
+
+  .cta-card h3, .info-card h4 {
+    margin-bottom: var(--space-3);
+  }
+
+  .cta-card p {
+    color: var(--color-text-muted);
+    font-size: 0.875rem;
+    margin-bottom: var(--space-4);
+  }
+
+  .cta-phone {
+    text-align: center;
+    font-size: 0.875rem;
+    margin-top: var(--space-4);
+    margin-bottom: 0;
+  }
+
+  .cta-phone a {
+    color: var(--color-primary);
+    font-weight: 600;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 600;
+    padding: var(--space-4) var(--space-6);
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    min-height: 52px;
+    transition: all 150ms ease;
+    cursor: pointer;
+    border: none;
+  }
+
+  .btn-primary {
+    background: var(--color-accent);
+    color: var(--color-primary);
+  }
+
+  .btn-primary:hover {
+    filter: brightness(1.1);
+    transform: translateY(-1px);
+  }
+
+  .btn-full { width: 100%; }
+
+  .info-card ul {
+    list-style: none;
+  }
+
+  .info-card li {
+    padding: var(--space-2) 0;
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+    border-bottom: 1px solid rgba(93, 78, 55, 0.1);
+  }
+
+  .info-card li:last-child { border-bottom: none; }
+
+  /* Related */
+  .related h2 { text-align: center; margin-bottom: var(--space-8); }
+
+  .related-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+
+  @media (min-width: 48rem) {
+    .related-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  .related-card {
+    background: var(--color-background);
+    padding: var(--space-6);
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(93, 78, 55, 0.1);
+    text-decoration: none;
+    color: inherit;
+    transition: all 200ms ease;
+  }
+
+  .related-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--color-accent);
+  }
+
+  .related-card h3 { margin-bottom: var(--space-2); }
+  .related-card p { color: var(--color-text-muted); font-size: 0.875rem; margin-bottom: var(--space-3); }
+  .related-card span { color: var(--color-primary); font-weight: 600; font-size: 0.875rem; }
+</style>

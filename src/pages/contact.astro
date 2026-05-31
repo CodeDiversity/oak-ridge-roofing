@@ -1,0 +1,304 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Contact Us" description="Contact Oak Ridge Roofing Co. for a free roof inspection. Call (555) 123-4567 or request a quote online.">
+
+  <!-- Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <h1>Contact Us</h1>
+      <p class="hero-subtitle">Ready to get started? Contact us for a free roof inspection and estimate.</p>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="section-pad">
+    <div class="container">
+      <div class="contact-grid">
+        <!-- Contact Form -->
+        <div class="form-section">
+          <h2>Request a Free Inspection</h2>
+          <p class="form-intro">Fill out the form below and we will contact you within 24 hours to schedule your inspection.</p>
+
+          <form class="contact-form" method="post" action="/contact-success">
+            <div class="form-group">
+              <label for="name">Full Name <span class="required">*</span></label>
+              <input type="text" id="name" name="name" required placeholder="John Smith" />
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="email">Email Address <span class="required">*</span></label>
+                <input type="email" id="email" name="email" required placeholder="john@example.com" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" />
+                <span class="field-error" id="email-error">Please enter a valid email address</span>
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone Number <span class="required">*</span></label>
+                <input type="tel" id="phone" name="phone" required placeholder="(555) 123-4567" pattern="[\d\s\-\(\)\+]{10,}" />
+                <span class="field-error" id="phone-error">Please enter a valid phone number (10+ digits)</span>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="address">Property Address</label>
+              <input type="text" id="address" name="address" placeholder="123 Main St, Oak Ridge, TN" />
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="service">Service Needed <span class="required">*</span></label>
+                <select id="service" name="service" required>
+                  <option value="">Select a service</option>
+                  <option value="inspection">Free Roof Inspection</option>
+                  <option value="repair">Roof Repair</option>
+                  <option value="replacement">Roof Replacement</option>
+                  <option value="storm">Storm Damage Assessment</option>
+                  <option value="gutter">Gutter Services</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="urgency">How Urgent?</label>
+                <select id="urgency" name="urgency">
+                  <option value="routine">Routine — within a week</option>
+                  <option value="soon">Soon — within a few days</option>
+                  <option value="urgent">Urgent — active leak or damage</option>
+                  <option value="emergency">Emergency — needs immediate attention</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Additional Details</label>
+              <textarea id="message" name="message" rows="4" placeholder="Describe your roofing needs, any issues you're experiencing, or questions you have..."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-full">Request Free Inspection</button>
+          </form>
+        </div>
+
+        <!-- Contact Info -->
+        <aside class="info-section">
+          <div class="info-card">
+            <h3>Contact Information</h3>
+            <ul class="contact-list">
+              <li>
+                <span class="contact-icon">
+                  <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                  </svg>
+                </span>
+                <div>
+                  <strong>Phone</strong>
+                  <a href="tel:+15551234567">(555) 123-4567</a>
+                </div>
+              </li>
+              <li>
+                <span class="contact-icon">
+                  <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                  </svg>
+                </span>
+                <div>
+                  <strong>Email</strong>
+                  <a href="mailto:info@oakridgeroofing.com">info@oakridgeroofing.com</a>
+                </div>
+              </li>
+              <li>
+                <span class="contact-icon">
+                  <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                  </svg>
+                </span>
+                <div>
+                  <strong>Service Area</strong>
+                  <span>Oak Ridge, TN and surrounding areas</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="info-card">
+            <h3>Business Hours</h3>
+            <ul class="hours-list">
+              <li><span>Monday</span><span>8:00 AM – 6:00 PM</span></li>
+              <li><span>Tuesday</span><span>8:00 AM – 6:00 PM</span></li>
+              <li><span>Wednesday</span><span>8:00 AM – 6:00 PM</span></li>
+              <li><span>Thursday</span><span>8:00 AM – 6:00 PM</span></li>
+              <li><span>Friday</span><span>8:00 AM – 6:00 PM</span></li>
+              <li><span>Saturday</span><span>9:00 AM – 2:00 PM</span></li>
+              <li><span>Sunday</span><span>Closed</span></li>
+            </ul>
+            <p class="emergency-note">Emergency services available 24/7</p>
+          </div>
+
+          <a href="tel:+15551234567" class="btn-call">
+            <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+            </svg>
+            Call (555) 123-4567
+          </a>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .page-hero {
+    background: linear-gradient(135deg, var(--color-primary) 0%, #4A3E2B 100%);
+    color: var(--color-surface);
+    padding: var(--space-16) 0;
+    text-align: center;
+  }
+
+  .page-hero h1 { color: var(--color-surface); margin-bottom: var(--space-4); }
+  .hero-subtitle { font-size: var(--font-size-body-lg); color: rgba(255, 255, 255, 0.9); max-width: 600px; margin: 0 auto; }
+
+  .section-pad { padding: var(--space-16) 0; }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-12);
+  }
+
+  @media (min-width: 64rem) {
+    .contact-grid {
+      grid-template-columns: 1fr 380px;
+    }
+  }
+
+  .form-section h2 { margin-bottom: var(--space-2); }
+  .form-intro { color: var(--color-text-muted); margin-bottom: var(--space-8); }
+
+  .contact-form { max-width: 100%; }
+
+  .form-row { display: grid; grid-template-columns: 1fr; gap: var(--space-6); }
+  @media (min-width: 48rem) { .form-row { grid-template-columns: repeat(2, 1fr); } }
+
+  .form-group { display: flex; flex-direction: column; gap: var(--space-2); margin-bottom: var(--space-6); }
+  .form-group:last-child { margin-bottom: 0; }
+
+  .form-group label { font-weight: 600; font-size: 0.875rem; color: var(--color-text); }
+  .required { color: #C45B5B; }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    padding: var(--space-3) var(--space-4);
+    border: 2px solid rgba(93, 78, 55, 0.2);
+    border-radius: var(--radius-md);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: var(--color-text);
+    background: var(--color-surface);
+    transition: border-color 150ms ease;
+  }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-accent);
+  }
+
+  .form-group input::placeholder,
+  .form-group textarea::placeholder { color: var(--color-text-muted); opacity: 0.7; }
+  .form-group textarea { resize: vertical; min-height: 120px; }
+
+  .field-error { display: none; color: #C45B5B; font-size: 0.8125rem; margin-top: var(--space-2); }
+  .form-group.error input, .form-group.error select, .form-group.error textarea { border-color: #C45B5B; }
+  .form-group.error .field-error { display: block; }
+
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: var(--space-2); font-family: var(--font-body); font-size: 1rem; font-weight: 600; padding: var(--space-4) var(--space-6); border-radius: var(--radius-md); text-decoration: none; min-height: 52px; transition: all 150ms ease; cursor: pointer; border: none; }
+  .btn-primary { background: var(--color-accent); color: var(--color-primary); }
+  .btn-primary:hover { filter: brightness(1.1); transform: translateY(-1px); }
+  .btn-full { width: 100%; }
+
+  /* Info Section */
+  .info-section { display: flex; flex-direction: column; gap: var(--space-6); }
+
+  .info-card { background: var(--color-surface); border: 1px solid rgba(93, 78, 55, 0.1); border-radius: var(--radius-lg); padding: var(--space-6); box-shadow: var(--shadow-md); }
+  .info-card h3 { margin-bottom: var(--space-4); }
+
+  .contact-list { list-style: none; }
+  .contact-list li { display: flex; align-items: flex-start; gap: var(--space-4); padding: var(--space-3) 0; border-bottom: 1px solid rgba(93, 78, 55, 0.1); }
+  .contact-list li:last-child { border-bottom: none; }
+  .contact-list li > div { display: flex; flex-direction: column; gap: var(--space-1); }
+  .contact-list li strong { font-size: 0.875rem; color: var(--color-text-muted); font-weight: 500; }
+  .contact-list li a, .contact-list li span { font-size: 1rem; color: var(--color-text); }
+  .contact-list li a:hover { color: var(--color-primary); }
+
+  .contact-icon { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: rgba(93, 78, 55, 0.08); border-radius: 50%; color: var(--color-primary); flex-shrink: 0; }
+
+  .hours-list { list-style: none; }
+  .hours-list li { display: flex; justify-content: space-between; padding: var(--space-2) 0; font-size: 0.875rem; border-bottom: 1px solid rgba(93, 78, 55, 0.1); }
+  .hours-list li:last-child { border-bottom: none; }
+  .hours-list li span:first-child { color: var(--color-text); }
+  .hours-list li span:last-child { color: var(--color-text-muted); }
+
+  .emergency-note { font-size: 0.875rem; color: #C45B5B; font-weight: 600; text-align: center; margin: var(--space-4) 0 0; }
+
+  .btn-call { display: flex; align-items: center; justify-content: center; gap: var(--space-3); background: var(--color-secondary); color: white; font-weight: 600; padding: var(--space-4) var(--space-6); border-radius: var(--radius-md); text-decoration: none; min-height: 56px; transition: all 150ms ease; }
+  .btn-call:hover { background: #2D4433; transform: translateY(-2px); }
+</style>
+
+<script>
+  const form = document.querySelector('.contact-form');
+  const emailInput = document.getElementById('email');
+  const phoneInput = document.getElementById('phone');
+
+  function validateEmail(email) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  }
+
+  function validatePhone(phone) {
+    return /^[\d\s\-\(\)\+]{10,}$/.test(phone);
+  }
+
+  function showError(input) {
+    input.closest('.form-group').classList.add('error');
+  }
+
+  function clearError(input) {
+    input.closest('.form-group').classList.remove('error');
+  }
+
+  emailInput?.addEventListener('blur', () => {
+    if (emailInput.value && !validateEmail(emailInput.value)) {
+      showError(emailInput);
+    } else {
+      clearError(emailInput);
+    }
+  });
+
+  phoneInput?.addEventListener('blur', () => {
+    if (phoneInput.value && !validatePhone(phoneInput.value)) {
+      showError(phoneInput);
+    } else {
+      clearError(phoneInput);
+    }
+  });
+
+  form?.addEventListener('submit', (e) => {
+    let valid = true;
+    
+    if (!validateEmail(emailInput.value)) {
+      showError(emailInput);
+      valid = false;
+    }
+    
+    if (!validatePhone(phoneInput.value)) {
+      showError(phoneInput);
+      valid = false;
+    }
+
+    if (valid) {
+      e.preventDefault();
+      setTimeout(() => window.location.href = '/contact-success', 100);
+    }
+  });
+</script>

@@ -1,0 +1,19 @@
+{
+  "project": "Oak Ridge Roofing Co.",
+  "workspace": "/Users/devMentor/page-and-pixel/oak-ridge-roofing",
+  "workflow": {
+    "model": "sonnet",
+    "autoProgress": false,
+    "commitMode": "atomic"
+  },
+  "phases": {
+    "1": { "name": "Foundation & Design", "status": "pending" },
+    "2": { "name": "Homepage", "status": "pending" },
+    "3": { "name": "Service Pages", "status": "pending" },
+    "4": { "name": "Contact & Conversion", "status": "pending" },
+    "5": { "name": "Polish & Portfolio", "status": "pending" }
+  },
+  "techStack": ["Astro.js"],
+  "brand": "Page and Pixel",
+  "created": "2026-05-30"
+}

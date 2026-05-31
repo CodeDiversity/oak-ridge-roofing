@@ -1,0 +1,67 @@
+---
+---
+
+<div class="chat-widget" id="chatWidget">
+  <button class="chat-toggle" id="chatToggle" aria-label="Open chat">
+    <svg class="chat-icon" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/>
+    </svg>
+    <svg class="close-icon" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+    </svg>
+  </button>
+
+  <div class="chat-window" id="chatWindow">
+    <div class="chat-header">
+      <div class="chat-avatar">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+        </svg>
+      </div>
+      <div class="chat-header-info">
+        <strong>Oak Ridge Roofing</strong>
+        <span>Typically replies within an hour</span>
+      </div>
+    </div>
+
+    <div class="chat-messages" id="chatMessages">
+      <div class="message bot">
+        <div class="message-avatar">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+          </svg>
+        </div>
+        <div class="message-bubble bot-bubble">Hi there! I'm here to help with your roofing questions. What can I assist you with today?</div>
+      </div>
+    </div>
+
+    <div class="chat-input-area">
+      <div class="chat-options" id="chatOptions">
+        <button class="chat-option" data-response="new-roof">I need a new roof</button>
+        <button class="chat-option" data-response="repair">I need a roof repair</button>
+        <button class="chat-option" data-response="storm">I have storm damage</button>
+        <button class="chat-option" data-response="inspection">I need a free inspection</button>
+        <button class="chat-option" data-response="other">Something else</button>
+      </div>
+      <form class="chat-form" id="chatForm" style="display: none;">
+        <input type="text" id="chatInput" placeholder="Type your message..." autocomplete="off" />
+        <button type="submit" class="chat-send" aria-label="Send">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+          </svg>
+        </button>
+      </form>
+      <div class="chat-success" id="chatSuccess" style="display: none;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+        </svg>
+        <span>Thanks! We'll contact you shortly.</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  import { initChat } from './chat';
+  initChat();
+</script>
