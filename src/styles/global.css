@@ -1,0 +1,157 @@
+/* CSS Reset and Box Sizing */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Design Tokens on :root */
+:root {
+  /* Colors per D-01 and UI-SPEC */
+  --color-primary: #5D4E37;
+  --color-secondary: #3D5A45;
+  --color-background: #F5F0E8;
+  --color-surface: #FFFFFF;
+  --color-text: #2C2416;
+  --color-text-muted: #6B5D4D;
+  --color-accent: #C4A35A;
+
+  /* Typography per D-02 — font variables map to astro.config.mjs cssVariable */
+  --font-headline: 'Roboto Slab', serif;
+  --font-body: 'Archivo', sans-serif;
+
+  /* Typography scale — mobile → desktop */
+  --font-size-headline-lg: 2.25rem;  /* 36px desktop */
+  --font-size-headline-md: 1.75rem;  /* 28px mobile */
+  --font-size-headline-xl: 3rem;     /* 48px desktop hero */
+
+  --font-size-subheading-lg: 1.875rem; /* 30px desktop */
+  --font-size-subheading-md: 1.25rem;  /* 20px mobile */
+
+  --font-size-body-lg: 1.125rem;   /* 18px desktop */
+  --font-size-body-md: 1rem;       /* 16px mobile */
+  --font-size-body-xl: 1.25rem;   /* 20px desktop */
+
+  --font-size-caption: 0.75rem;    /* 12px */
+
+  /* Spacing scale — 8-point system */
+  --space-1: 0.25rem;   /* 4px */
+  --space-2: 0.5rem;    /* 8px */
+  --space-3: 0.75rem;   /* 12px */
+  --space-4: 1rem;      /* 16px */
+  --space-6: 1.5rem;    /* 24px */
+  --space-8: 2rem;      /* 32px */
+  --space-12: 3rem;     /* 48px */
+  --space-16: 4rem;     /* 64px */
+  --space-24: 6rem;     /* 96px */
+
+  /* Border radius */
+  --radius-sm: 0.25rem;  /* 4px */
+  --radius-md: 0.5rem;   /* 8px */
+  --radius-lg: 1rem;    /* 16px */
+
+  /* Shadows */
+  --shadow-sm: 0 1px 4px rgba(44, 36, 22, 0.06);
+  --shadow-md: 0 4px 12px rgba(44, 36, 22, 0.10);
+  --shadow-lg: 0 8px 24px rgba(44, 36, 22, 0.12);
+
+  /* Breakpoints per D-06 — CSS custom properties for reference, but media queries use hard-coded values */
+  --bp-sm: 48rem;   /* 768px */
+  --bp-md: 64rem;   /* 1024px */
+  --bp-lg: 90rem;   /* 1440px */
+}
+
+/* Base Typography Styles */
+body {
+  font-family: var(--font-body);
+  font-size: var(--font-size-body-md);
+  color: var(--color-text);
+  background-color: var(--color-background);
+  line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-headline);
+  line-height: 1.2;
+}
+
+h1 { font-size: var(--font-size-headline-md); font-weight: 700; }
+h2 { font-size: var(--font-size-headline-md); font-weight: 700; }
+h3 { font-size: var(--font-size-subheading-md); font-weight: 600; }
+
+p { margin-bottom: var(--space-4); }
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+/* Container System */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--space-4);
+  padding-right: var(--space-4);
+}
+
+@media (min-width: 48rem) {
+  .container {
+    padding-left: var(--space-8);
+    padding-right: var(--space-8);
+  }
+}
+
+@media (min-width: 64rem) {
+  .container {
+    padding-left: var(--space-12);
+    padding-right: var(--space-12);
+  }
+}
+
+/* Responsive Typography Scale */
+@media (min-width: 48rem) {
+  body { font-size: var(--font-size-body-lg); }
+  h1 { font-size: var(--font-size-headline-lg); }
+  h2 { font-size: var(--font-size-headline-lg); }
+  h3 { font-size: var(--font-size-subheading-lg); }
+}
+
+@media (min-width: 64rem) {
+  body { font-size: var(--font-size-body-xl); }
+}
+
+/* Accessibility — Skip Link and Focus Styles */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--color-accent);
+  color: var(--color-primary);
+  padding: var(--space-2) var(--space-4);
+  z-index: 9999;
+  transition: top 200ms ease;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* Utility Classes */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
