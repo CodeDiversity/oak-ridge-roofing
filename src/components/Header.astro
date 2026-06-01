@@ -24,13 +24,51 @@
       <span>Call Now</span>
     </a>
 
-    <button class="nav-mobile-toggle" aria-label="Open menu" aria-expanded="false" type="button">
-      <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+    <button class="nav-mobile-toggle" id="mobileToggle" aria-label="Open menu" aria-expanded="false" type="button">
+      <svg class="icon-menu" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
         <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+      </svg>
+      <svg class="icon-close" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" style="display: none;">
+        <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
       </svg>
     </button>
   </div>
+
+  <!-- Mobile Navigation Drawer -->
+  <nav class="nav-mobile" id="mobileNav" aria-label="Mobile navigation">
+    <a href="/">Home</a>
+    <a href="/services">Services</a>
+    <a href="/repair">Roof Repair</a>
+    <a href="/storm-damage">Storm Damage</a>
+    <a href="/about">About</a>
+    <a href="/contact">Contact</a>
+    <a href="tel:+15551234567" class="mobile-call">Call Now</a>
+  </nav>
 </header>
+
+<script>
+  const toggle = document.getElementById('mobileToggle');
+  const nav = document.getElementById('mobileNav');
+  const iconMenu = toggle?.querySelector('.icon-menu');
+  const iconClose = toggle?.querySelector('.icon-close');
+
+  toggle?.addEventListener('click', () => {
+    const isOpen = nav?.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', String(isOpen));
+    if (iconMenu) iconMenu.style.display = isOpen ? 'none' : 'block';
+    if (iconClose) iconClose.style.display = isOpen ? 'block' : 'none';
+  });
+
+  // Close mobile nav when clicking a link
+  nav?.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      nav.classList.remove('open');
+      toggle?.setAttribute('aria-expanded', 'false');
+      if (iconMenu) iconMenu.style.display = 'block';
+      if (iconClose) iconClose.style.display = 'none';
+    });
+  });
+</script>
 
 <style>
   .site-header {
@@ -39,7 +77,7 @@
     z-index: 100;
     background: var(--color-surface);
     box-shadow: var(--shadow-sm);
-    transition: box-shadow 200ms ease;
+    position: relative;
   }
 
   .header-inner {
@@ -57,6 +95,8 @@
     flex-direction: column;
     text-decoration: none;
     color: var(--color-primary);
+    z-index: 101;
+    position: relative;
   }
 
   .logo-primary {
@@ -87,16 +127,19 @@
 
   .nav-desktop a {
     font-family: var(--font-body);
-    font-size: 0.875rem;
+    font-size: 0.9375rem;
     font-weight: 500;
     color: var(--color-text);
     text-decoration: none;
-    transition: color 150ms ease;
+    transition: color 150ms ease, padding-top 150ms ease;
+    padding: var(--space-2) var(--space-3);
+    border-radius: var(--radius-sm);
   }
 
   .nav-desktop a:hover,
   .nav-desktop a:focus-visible {
-    color: var(--color-accent);
+    color: var(--color-primary);
+    background: rgba(93, 78, 55, 0.06);
   }
 
   /* CTA Button */
@@ -139,6 +182,7 @@
     cursor: pointer;
     color: var(--color-text);
     border-radius: var(--radius-sm);
+    z-index: 101;
   }
 
   .nav-mobile-toggle:hover {
@@ -149,5 +193,60 @@
     .nav-mobile-toggle {
       display: none;
     }
+  }
+
+  /* Mobile Navigation Drawer */
+  .nav-mobile {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--color-surface);
+    box-shadow: var(--shadow-md);
+    padding: var(--space-4) var(--space-4) var(--space-6);
+    flex-direction: column;
+  }
+
+  .nav-mobile.open {
+    display: flex;
+  }
+
+  @media (min-width: 48rem) {
+    .nav-mobile {
+      display: none !important;
+    }
+  }
+
+  .nav-mobile a {
+    display: block;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--color-text);
+    text-decoration: none;
+    padding: var(--space-4) var(--space-2);
+    border-bottom: 1px solid rgba(93, 78, 55, 0.1);
+    transition: color 150ms ease;
+  }
+
+  .nav-mobile a:last-child {
+    border-bottom: none;
+  }
+
+  .nav-mobile a:hover {
+    color: var(--color-primary);
+  }
+
+  .nav-mobile .mobile-call {
+    display: block;
+    background: var(--color-accent);
+    color: var(--color-primary);
+    font-weight: 600;
+    text-align: center;
+    margin-top: var(--space-4);
+    padding: var(--space-4);
+    border-radius: var(--radius-md);
+    border-bottom: none;
   }
 </style>

@@ -61,7 +61,8 @@
   </div>
 </div>
 
-<script>
-  import { initChat } from './chat';
-  initChat();
+<script is:inline data-astro-rerun>
+  document.addEventListener('astro:page-load', () => {
+    import('./chat.ts').then(m => m.initChat());
+  });
 </script>
