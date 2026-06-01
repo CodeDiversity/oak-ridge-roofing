@@ -46,28 +46,33 @@
   </nav>
 </header>
 
-<script>
-  const toggle = document.getElementById('mobileToggle');
-  const nav = document.getElementById('mobileNav');
-  const iconMenu = toggle?.querySelector('.icon-menu');
-  const iconClose = toggle?.querySelector('.icon-close');
+<script is:inline>
+  function initMobileNav() {
+    const toggle = document.getElementById('mobileToggle');
+    const nav = document.getElementById('mobileNav');
+    const iconMenu = toggle?.querySelector('.icon-menu');
+    const iconClose = toggle?.querySelector('.icon-close');
 
-  toggle?.addEventListener('click', () => {
-    const isOpen = nav?.classList.toggle('open');
-    toggle.setAttribute('aria-expanded', String(isOpen));
-    if (iconMenu) iconMenu.style.display = isOpen ? 'none' : 'block';
-    if (iconClose) iconClose.style.display = isOpen ? 'block' : 'none';
-  });
+    if (!toggle || !nav) return;
 
-  // Close mobile nav when clicking a link
-  nav?.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      nav.classList.remove('open');
-      toggle?.setAttribute('aria-expanded', 'false');
-      if (iconMenu) iconMenu.style.display = 'block';
-      if (iconClose) iconClose.style.display = 'none';
+    toggle.addEventListener('click', () => {
+      const isOpen = nav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', String(isOpen));
+      if (iconMenu) iconMenu.style.display = isOpen ? 'none' : 'block';
+      if (iconClose) iconClose.style.display = isOpen ? 'block' : 'none';
     });
-  });
+
+    nav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        nav.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+        if (iconMenu) iconMenu.style.display = 'block';
+        if (iconClose) iconClose.style.display = 'none';
+      });
+    });
+  }
+
+  document.addEventListener('astro:page-load', initMobileNav);
 </script>
 
 <style>
