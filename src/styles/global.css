@@ -412,10 +412,15 @@ a {
 
   .chat-window {
     width: calc(100vw - var(--space-8));
-    height: calc(100vh - 100px);
-    max-height: none;
+    height: 520px;
+    max-height: calc(100vh - 120px);
     border-radius: 16px 16px 0 0;
-    bottom: 70px;
+    bottom: 80px;
     right: var(--space-4);
+  }
+
+  .chat-messages {
+    height: 340px;
+    min-height: 340px;
   }
 }

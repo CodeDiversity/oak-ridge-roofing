@@ -197,7 +197,7 @@ export function initChat() {
     }
     
     messagesContainer.appendChild(msg);
-    messagesContainer.scrollTop = messagesContainer.scrollHeight;
+    msg.scrollIntoView({ behavior: 'smooth', block: 'end' });
   }
 
   function handleInitialResponse(response: string) {
